@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: stu-dep
@@ -10,12 +10,12 @@ spec:
       app: stu-api
   template:
     metadata:
-      label:
+      labels:
         app: stu-api
     spec:
       containers:
         - name: stu-cont
           image: stu-api:latest
-          imagePullPolicy: ifNotExist
+          imagePullPolicy: IfNotPresent
           ports:
-            containerPort: 8000
+           - containerPort: 8000
