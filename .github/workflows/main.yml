@@ -1,4 +1,4 @@
-name : students
+name: students
 
 on: push
 
@@ -6,6 +6,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v4
-      run: pip install fastapi uvicorn
-      run: python -c "from app import app; print("Running succesfully!")" 
+      - uses: actions/checkout@v4
+        run: pip install fastapi uvicorn
+        run: python -c "from app import app; print('Running succesfully!')" 
